@@ -1,16 +1,49 @@
-<<<<<<< HEAD
-# React + Vite
+# 📝 To-Do List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and elegant To-Do List web application built using **React**, **Vite**, and **Tailwind CSS**. It allows users to:
 
-Currently, two official plugins are available:
+- ✅ Add new tasks
+- ✅ Mark tasks as completed
+- ✅ Edit tasks
+- ✅ Delete tasks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Functional React components with `useState`
+- Task list rendered dynamically using `.map()`
+- Controlled inputs for task creation and editing
+- Tailwind CSS for modern and responsive UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# TODO-LIST
->>>>>>> 4f238a2b02ca471ed369d12bf9a947dd8477adaf
+---
+
+## 📁 Project Structure
+
+src/
+├── components/
+│ ├── Header.jsx
+│ ├── ToDoItem.jsx
+│ └── ToDoList.jsx
+├── App.jsx
+├── main.jsx
+└── index.css
+
+
+---
+
+## 📦 Tech Stack
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## 🛠️ Installation & Setup
+
+Follow these steps to run the application locally:
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/todo-app.git
+cd todo-app
