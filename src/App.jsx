@@ -1,9 +1,21 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Components/Header';
 import ToDoList from './Components/ToDoList';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedLocal = localStorage.getItem('tasks');
+    const savedSession = sessionStorage.getItem('tasks');
+    if (savedSession) return JSON.parse(savedSession);
+    if (savedLocal) return JSON.parse(savedLocal);
+    return [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+    sessionStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
   const [newTask, setNewTask] = useState('');
 
   const addTodo = () => {
@@ -14,54 +26,53 @@ function App() {
       completed: false,
       isEditing: false,
     };
-    setTodos([newTodo, ...todos]);
+    setTasks([newTodo, ...tasks]);
     setNewTask('');
   };
 
   const toggleComplete = (id) => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
+    setTasks(tasks.map(todo => todo.id === id ? { ...todo, completed: !todo.completed } : todo));
   };
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
+    setTasks(tasks.filter(todo => todo.id !== id));
   };
 
   const editTodo = (id, newText) => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, text: newText, isEditing: false } : todo));
+    setTasks(tasks.map(todo => todo.id === id ? { ...todo, text: newText, isEditing: false } : todo));
   };
 
   const toggleEditing = (id) => {
-    setTodos(todos.map(todo => todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo));
+    setTasks(tasks.map(todo => todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo));
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-5">
-      <div className="max-w-xl mx-auto bg-white p-5 rounded-xl shadow">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center p-2 sm:p-5">
+      <div className="w-full sm:max-w-xl mx-auto bg-gray-900 p-6 sm:p-10 rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border-l-8 border-purple-700 transition-all duration-300 hover:shadow-[0_16px_48px_0_rgba(31,38,135,0.37)]">
         <Header />
-        <div className="flex mb-4">
+        <div className="flex flex-col sm:flex-row mb-4 gap-3">
           <input
             type="text"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
             placeholder="Enter a new task"
-            className="flex-1 border rounded-l px-3 py-2"
+            className="border-2 border-purple-700 bg-gray-800 text-white rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-purple-700 transition-all shadow-md"
           />
           <button
             onClick={addTodo}
-            className="bg-blue-600 text-white px-4 py-2 rounded-r hover:bg-blue-700"
+            className="bg-gradient-to-r from-purple-700 via-pink-700 to-red-700 text-white px-6 py-2 rounded-lg shadow-lg font-bold hover:scale-105 hover:shadow-xl transition-all"
           >
             Add
           </button>
         </div>
         <ToDoList
-          todos={todos}
+          todos={tasks}
           toggleComplete={toggleComplete}
           deleteTodo={deleteTodo}
           editTodo={editTodo}
           toggleEditing={toggleEditing}
         />
       </div>
-      <h1></h1>
     </div>
   );
 }
