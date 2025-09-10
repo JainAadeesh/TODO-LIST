@@ -47,8 +47,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center p-2 sm:p-5">
-      <div className="w-full sm:max-w-xl mx-auto bg-gray-900 p-6 sm:p-10 rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border-l-8 border-purple-700 transition-all duration-300 hover:shadow-[0_16px_48px_0_rgba(31,38,135,0.37)]">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex flex-col items-center p-2 sm:p-5">
+      <div className="w-full sm:max-w-xl mx-auto bg-gray-900 p-6 sm:p-10 rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] border-l-8 border-purple-700 transition-all duration-300 hover:shadow-[0_16px_48px_0_rgba(31,38,135,0.37)] mt-8">
         <Header />
         <div className="flex flex-col sm:flex-row mb-4 gap-3">
           <input

@@ -30,7 +30,7 @@ function ToDoItem({ todo, toggleComplete, deleteTodo, editTodo, toggleEditing })
               checked={todo.completed}
               onChange={() => toggleComplete(todo.id)}
             />
-            <span className={todo.completed ? "line-through text-gray-500" : ""}>
+            <span className={todo.completed ? "line-through text-red-500" : ""}>
               {todo.text}
             </span>
           </div>
