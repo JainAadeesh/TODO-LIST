@@ -57,13 +57,16 @@ function App() {
 
   return (
     <div className={`min-h-screen ${bgClass} flex flex-col items-center p-2 sm:p-5`}>
-      <button
-        className="fixed top-2 right-2 sm:top-4 sm:right-4 px-3 py-2 sm:px-4 sm:py-2 rounded-lg bg-purple-500 text-white font-semibold shadow hover:bg-purple-700 transition z-10"
-        onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      >
-        {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-      </button>
-      <div className={`w-full max-w-full sm:max-w-xl mx-auto ${boxBgClass} p-3 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] ${borderClass} transition-all duration-300 hover:shadow-[0_16px_48px_0_rgba(31,38,135,0.37)] mt-6 sm:mt-8`}>
+      {/* Place toggle button above the todo box, not fixed */}
+      <div className="w-full flex justify-end mb-2 sm:mb-4">
+        <button
+          className="px-2 py-1 sm:px-3 sm:py-2 rounded-md bg-purple-500 text-white text-xs sm:text-sm font-semibold shadow hover:bg-purple-700 transition"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </button>
+      </div>
+      <div className={`w-full max-w-full sm:max-w-xl mx-auto ${boxBgClass} p-3 sm:p-10 rounded-2xl sm:rounded-3xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] ${borderClass} transition-all duration-300 hover:shadow-[0_16px_48px_0_rgba(31,38,135,0.37)] mt-0 sm:mt-8`}>
         <Header />
         <div className="flex flex-col sm:flex-row mb-4 gap-2 sm:gap-3">
           <input
