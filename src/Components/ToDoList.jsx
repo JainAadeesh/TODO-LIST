@@ -1,6 +1,6 @@
 import ToDoItem from './ToDoItem';
 
-function ToDoList({ todos, toggleComplete, deleteTodo, editTodo, toggleEditing }) {
+function ToDoList({ todos, toggleComplete, deleteTodo, editTodo, toggleEditing, theme = "dark" }) {
   return (
     <ul>
       {todos.map((todo) => (
@@ -11,6 +11,7 @@ function ToDoList({ todos, toggleComplete, deleteTodo, editTodo, toggleEditing }
           deleteTodo={deleteTodo}
           editTodo={editTodo}
           toggleEditing={toggleEditing}
+          theme={theme}
         />
       ))}
     </ul>
