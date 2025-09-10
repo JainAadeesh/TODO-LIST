@@ -15,12 +15,12 @@ function ToDoItem({ todo, toggleComplete, deleteTodo, editTodo, toggleEditing })
       {todo.isEditing ? (
         <form onSubmit={handleEditSubmit} className="flex w-full">
           <input
-            className="flex-1 border rounded-l px-2 py-1"
+            className="flex-1 rounded-l px-2 py-1"
             type="text"
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
           />
-          <button type="submit" className="bg-green-500 text-white px-3 rounded-r">Save</button>
+          <button type="submit" className="bg-red-500 text-shadow-red-500 px-3 rounded-r">Save</button>
         </form>
       ) : (
         <>

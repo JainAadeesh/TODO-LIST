@@ -55,7 +55,7 @@ function App() {
             type="text"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            placeholder="Enter a new task"
+            placeholder="Enter a new task . . ."
             className="border-2 border-purple-700 bg-gray-800 text-white rounded-lg px-4 py-2 flex-1 focus:outline-none focus:ring-2 focus:ring-purple-700 transition-all shadow-md"
           />
           <button
