@@ -7,6 +7,16 @@ A simple and elegant To-Do List web application built using **React**, **Vite**,
 - ✅ Edit tasks
 - ✅ Delete tasks
 
+
+🌐 Live Demo
+
+🔗 Live Project: [https://todo-list-seven-flax-23.vercel.app/]
+
+📂 GitHub Repository: [https://github.com/JainAadeesh/TODO-LIST]
+
+📹 Demo Video: [https://drive.google.com/file/d/1teTHALN80ucpnIMUSGMOD9TbFdG5toXh/view?usp=sharing]
+
+
 ## 🚀 Features
 
 - Functional React components with `useState`
@@ -47,3 +57,9 @@ Follow these steps to run the application locally:
 ```bash
 git clone https://github.com/your-username/todo-app.git
 cd todo-app
+
+### Install dependencies
+npm install
+
+### Start the development server
+npm run dev
